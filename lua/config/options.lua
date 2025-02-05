@@ -21,3 +21,13 @@ opt.mouse = "a"
 opt.clipboard = "unnamedplus"
 
 opt.termguicolors = true
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = { "*.ts", "*.tsx" },
+	callback = function()
+		vim.lsp.buf.execute_command({
+			command = "_typescript.organizeImports",
+			arguments = { vim.fn.expand("%:p") },
+		})
+	end,
+})

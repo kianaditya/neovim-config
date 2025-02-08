@@ -31,3 +31,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		})
 	end,
 })
+-- Set to false to disable auto format
+vim.g.lazyvim_eslint_auto_format = true

@@ -14,28 +14,8 @@ return {
 		build = ':lua require("go.install").update_all_sync()',
 	},
 	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("lspconfig").gopls.setup({})
-		end,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		opts = { ensure_installed = { "go", "gomod", "gowork", "gosum" } },
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = { "go" },
-				highlight = { enable = true },
-			})
-		end,
-	},
-	{
 		"leoluz/nvim-dap-go",
 		opts = {},
-	},
-	{
-		"fredrikaverpil/neotest-golang",
 	},
 	{
 		"echasnovski/mini.icons",

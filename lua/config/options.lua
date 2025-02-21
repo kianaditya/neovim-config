@@ -4,23 +4,11 @@ vim.env.TERM = "xterm-ghostty"
 vim.lsp.set_log_level("debug")
 
 local opt = vim.opt
--- Set line numbers
-opt.number = true
-opt.relativenumber = true
-opt.termguicolors = true
 
+-- Set to true if you have a Nerd Font installed and selected in the terminal
+vim.g.have_nerd_font = true
 -- Set indentation
-opt.tabstop = 2
-opt.shiftwidth = 2
 opt.expandtab = true
-
--- Enable mouse support
-opt.mouse = "a"
-
--- Set clipboard to use system clipboard
-opt.clipboard = "unnamedplus"
-
-opt.termguicolors = true
 
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = { "*.ts", "*.tsx" },
@@ -33,3 +21,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 -- Set to false to disable auto format
 vim.g.lazyvim_eslint_auto_format = true
+
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }

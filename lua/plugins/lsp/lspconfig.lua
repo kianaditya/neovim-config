@@ -8,6 +8,21 @@ return {
 			config = function() end,
 		},
 	},
+	config = function()
+		vim.api.nvim_create_autocmd("CursorHold", {
+			callback = function()
+				local opts = {
+					focusable = false,
+					close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+					border = "rounded",
+					source = "always",
+					prefix = " ",
+					scope = "cursor",
+				}
+				vim.diagnostic.open_float(nil, opts)
+			end,
+		})
+	end,
 	opts = function()
 		local ret = {
 			diagnostics = {

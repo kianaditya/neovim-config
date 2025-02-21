@@ -9,5 +9,7 @@ return {
 	{ "sainnhe/gruvbox-material" },
 	{ "savq/melange-nvim" },
 	{ "navarasu/onedark.nvim" },
+	{ "rose-pine/neovim" },
+	{ "EdenEast/nightfox.nvim" },
 	{ "olimorris/onedarkpro.nvim" },
 }
